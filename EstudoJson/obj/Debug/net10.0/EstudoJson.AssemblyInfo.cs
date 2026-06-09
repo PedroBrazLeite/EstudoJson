@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EstudoJson")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d21aaa5db6a28f7cf4006aacfa3e1fbec66b03b6")]
 [assembly: System.Reflection.AssemblyProductAttribute("EstudoJson")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EstudoJson")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
