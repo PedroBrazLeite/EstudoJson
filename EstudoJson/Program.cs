@@ -19,6 +19,10 @@ try
     PessoaService.ExibirTagsUnicas(pessoas);
     PessoaService.BuscarPorId(pessoas);
 }
+catch (DirectoryNotFoundException ex)
+{
+    Console.WriteLine($"Diretório não encontrado: {ex.Message}");
+}
 catch (FileNotFoundException)
 {
     Console.WriteLine("Arquivo pessoas.json não encontrado.");

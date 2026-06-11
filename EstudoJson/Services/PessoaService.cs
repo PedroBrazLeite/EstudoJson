@@ -42,11 +42,10 @@
        public static void ExibirTop5MaisVelhos(List<Pessoa>? pessoas)
         {
             if (pessoas == null) return;
-            
-                var top5Velhos = pessoas
-                    .OrderByDescending(p => p.Age)
-                    .Take(5)
-                    .Select(p => new { p.Name, p.Age });
+
+            var top5Velhos = pessoas
+                .OrderByDescending(p => p.Age)
+                .Take(5);
                 Console.WriteLine("\nTop 5 mais velhos:");
                 foreach (var p in top5Velhos)
                     Console.WriteLine($"  {p}");
