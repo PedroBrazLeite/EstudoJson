@@ -23,9 +23,9 @@ catch (DirectoryNotFoundException ex)
 {
     Console.WriteLine($"Diretório não encontrado: {ex.Message}");
 }
-catch (FileNotFoundException)
+catch (FileNotFoundException ex)
 {
-    Console.WriteLine("Arquivo pessoas.json não encontrado.");
+    Console.WriteLine($"Arquivo pessoas.json não encontrado:  {ex.FileName}");
 }
 catch (JsonException ex)
 {
