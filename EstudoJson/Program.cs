@@ -2,18 +2,32 @@
 using EstudoJson.Models;
 using EstudoJson.Services;
 
-string jsonText = File.ReadAllText("Data/pessoas.json");
-var opcoes = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
-var pessoas = JsonSerializer.Deserialize<List<Pessoa>>(jsonText, opcoes);
+try
+{
 
-PessoaService.ExibirAtivos(pessoas);
-PessoaService.ExibirTop10Salarios(pessoas);
-PessoaService.TotalDePessoas(pessoas);
-PessoaService.MaiorEMenorSalario(pessoas);
-PessoaService.ExibirTop5MaisVelhos(pessoas);
-PessoaService.ExibirTop5MaisAmigos(pessoas);
-PessoaService.ExibirPorGenero(pessoas);
-PessoaService.ExibirTagsUnicas(pessoas);
-PessoaService.BuscarPorId(pessoas);
+    string jsonText = File.ReadAllText("Data/pessoas.json");
+    var opcoes = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+    var pessoas = JsonSerializer.Deserialize<List<Pessoa>>(jsonText, opcoes);
 
-
+    PessoaService.ExibirAtivos(pessoas);
+    PessoaService.ExibirTop10Salarios(pessoas);
+    PessoaService.TotalDePessoas(pessoas);
+    PessoaService.MaiorEMenorSalario(pessoas);
+    PessoaService.ExibirTop5MaisVelhos(pessoas);
+    PessoaService.ExibirTop5MaisAmigos(pessoas);
+    PessoaService.ExibirPorGenero(pessoas);
+    PessoaService.ExibirTagsUnicas(pessoas);
+    PessoaService.BuscarPorId(pessoas);
+}
+catch (FileNotFoundException)
+{
+    Console.WriteLine("Arquivo pessoas.json não encontrado.");
+}
+catch (JsonException ex)
+{
+    Console.WriteLine($"Erro ao ler o JSON: {ex.Message}");
+}
+catch (Exception ex) 
+{
+    Console.WriteLine($"Erro inesperado: {ex.Message}");
+}
